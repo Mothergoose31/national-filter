@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
   const [language,setlanguage] = useState("en")
 
   const switchLanguage = useCallback(function(){
-    setlanguage((l)=>(l ==="en"? "jp":"en"))
+    setlanguage((l)=>(l ==="en"? "ja":"en"))
   },[])
 
 
