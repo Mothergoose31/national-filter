@@ -8,8 +8,8 @@ import styles from '../styles/Home.module.css'
 export default function Home({countries}) {
   return (
     <Layout>
-      <div className={}>
-        
+      <div className={styles.inputContainer}>
+
       </div>
     </Layout>
   )
