@@ -1,14 +1,46 @@
-.inputContainer{
+  
+.counts {
+  margin: 12px 0;
+  color: var(--text-color-secondary);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inputContainer {
   margin-bottom: 20px;
 }
 
+.shufflebutton {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  outline:0;
+}
+
+.shufflebutton:hover {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 720px) {
-  .inputContainer {
+  .input_container {
     display: flex;
     justify-content: space-between;
   }
 
-  .input{
-    flex: 2
+  .counts {
+    flex: 1;
+  }
+
+  .input {
+    flex: 2;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .shufflebutton {
+    padding-right: 0;
   }
 }

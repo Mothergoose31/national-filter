@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
+.title{
+    font-family:Lora;
+}
+
 .container {
     padding: 24px;
     height: 100vh;
@@ -10,22 +14,31 @@
     max-width: 1100px;
     margin: 0 auto;
 }
-.title{
-    font-family:Lora;
-}
-
 .header {
     display: flex;
     justify-content: center;
     margin-bottom: 32px;
 }
 
-.header:hover
+.header:hover,
+.theme_switcher:hover
 {
     cursor: pointer;
+}
+
+.theme_switcher{
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer {
     text-align: center;
     font-size: 0.75rem;
 }
+
+
+

@@ -1,13 +1,16 @@
 import React,{useState,useEffect} from 'react';
 import {useRouter} from 'next/router'
 import Layout from '../components/Layout.jsx'
-import Head from 'next/head'
-import Image from 'next/image'
+
 import styles from '../styles/Home.module.css'
 import SearchBar from '../components/SearchBar.jsx'
 import TableOfNations from '../components/TableOfNations.jsx'
 
+
+import { ShuffleRounded } from '@material-ui/icons'
+
 export default function Home({countries}) {
+
   const [keyword, setKeyword] = useState("")
 
   const filteredNations = countries.filter(country =>
@@ -15,6 +18,7 @@ export default function Home({countries}) {
     country.region.toLowerCase().includes(keyword) ||
     country.subregion.toLowerCase().includes(keyword)
 )
+console.log(filteredNations + " filtered")
   const onInputChange = (e) => {
     e.preventDefault()
     setKeyword(e.target.value.toLowerCase())
@@ -22,14 +26,21 @@ export default function Home({countries}) {
   return (
     <Layout>
       <div className={styles.inputContainer}>
+      <div className={styles.counts}>
+        <div> {countries.length} </div>
 
-        <div className={styles.input}>
-          <SearchBar onChange={onInputChange} />
-        </div>
+        <button className={styles.shufflebutton}  >
+            <ShuffleRounded color='inherit' style={{ fontSize: '1.5rem' }}/>
+        </button>
+    </div>
 
-      </div>
-      <TableOfNations countries={filteredNations}/>
-    </Layout>
+    <div className={styles.input}>
+        <SearchBar  onChange={onInputChange} />
+    </div>
+  </div>
+
+  < TableOfNations countries={filteredNations} />
+</Layout>
   )
 }
 export const getStaticProps = async () => {
