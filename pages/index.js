@@ -7,14 +7,11 @@ import styles from '../styles/Home.module.css'
 
 export default function Home({countries}) {
   return (
-    <div className={styles.container}>
-      <h1>National Filter</h1>
-
-      {countries.map((country)=>{
-        console.log(country.name)
-      })}
-    
-    </div>
+    <Layout>
+      <div className={}>
+        
+      </div>
+    </Layout>
   )
 }
 export const getStaticProps = async () => {
