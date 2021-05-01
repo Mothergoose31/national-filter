@@ -2,7 +2,7 @@ import React,{useState,useContext} from 'react';
 import {useRouter} from 'next/router'
 import Layout from '../components/Layout.js'
 import styles from '../styles/Home.module.css'
-import SearchBar from '../components/SearchBar.js'
+import SearchBar from '../components/Searchbar.js'
 import TableOfNations from '../components/TableOfNations.js'
 import { ShuffleRounded } from '@material-ui/icons'
 import TrLang from '../public/translations/translation.json'
