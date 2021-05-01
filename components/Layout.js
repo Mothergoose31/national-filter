@@ -2,10 +2,18 @@ import React, { useContext, useState, useEffect, useCallback } from 'react'
 import Head from "next/head"
 import styles from "../styles/Layout.module.css"
 import Link from "next/link"
-import{Brightness6Rounded} from  '@material-ui/icons'
+import{Brightness6Rounded,LanguageRounded} from  '@material-ui/icons'
+
+import { LangContext } from '../pages/_app.js'
+
+import TrLang from '../public/translations/translation.json'
+
+
+
 
 export default function Layout({children,title = "National-Filter"}) {
     const [theme, setTheme] = useState('light')
+    const { lang, switchLanguage } = useContext(LangContext)
 
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
@@ -46,9 +54,14 @@ export default function Layout({children,title = "National-Filter"}) {
                 <Link href='/'>
                     <h1 className={styles.title}>National-Filter</h1>
                 </Link>
-                <button className={styles.theme_switcher} onClick={switchTheme} >
+                <button className={styles.theme_switcher} onClick={switchTheme} title ={TrLang['switch_theme'][lang]} >
                 <Brightness6Rounded style={{ fontSize: '1.5rem' }}/>
             </button>
+
+            <button className={styles.language_switcher} onClick={switchLanguage} title ={TrLang['switch_language'][lang]}>
+                <LanguageRounded style={{ fontSize: '1.5rem' }}/>
+            </button>
+
             </header>
             <main className={styles.main}>{children}</main>
             <footer className={styles.footer}> </footer>

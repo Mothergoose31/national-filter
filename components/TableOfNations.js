@@ -1,9 +1,12 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useContext} from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from  '../styles/TableOfNations.module.css'
 import formatNumber from '../functions/formatNum.js'
 import { KeyboardArrowDownRounded, KeyboardArrowUpRounded } from '@material-ui/icons'
+import TrLang from '../public/translations/translation.json'
+import {LangContext} from '../pages/_app.js'
+
 
 const orderBy = (countries, value, order) => {
     if (order === 'asc') {
@@ -36,6 +39,7 @@ const SortArrow = ({ order }) => {
 export default function TableOfNations({countries}) {
     const [order,setOrder] =useState()
     const [value,setValue] = useState()
+    const { lang } = useContext(LangContext)
     const orderedNation = orderBy(countries, value, order)
 
     const reverseOrder = () => {
@@ -55,25 +59,25 @@ export default function TableOfNations({countries}) {
     return (
         <div>
             
-        <div style={styles.heading}>
+        <div className={styles.heading}>
             <div className={styles.heading_flag}></div>
             <button className={styles.heading_name} onClick={() => setValueAndOder('name')}>
-                <div>{l10n['sort']['name'][lang]}</div>
+                <div>{TrLang['sort']['name'][lang]}</div>
                 {value === 'name' && <SortArrow order={order} />}
             </button>
 
             <button className={styles.heading_population} onClick={() => setValueAndOder('population')}>
-                <div>{l10n['sort']['population'][lang]}</div>
+                <div>{TrLang['sort']['population'][lang]}</div>
                 {value === 'population' && <SortArrow order={order} />}
             </button>
 
             <button className={styles.heading_area} onClick={() => setValueAndOder('area')}>
-                <div>{l10n['sort']['area'][lang]} (km<sup style={{ fontSize: "0.5rem" }}> 2</sup>)</div>
+                <div> (km<sup style={{ fontSize: "0.5rem" }}> 2</sup>)</div>
                 {value === 'area' && <SortArrow order={order} />}
             </button>
 
             <button className={styles.heading_gini} onClick={() => setValueAndOder('gini')}>
-                <div>{l10n['sort']['gini'][lang]}</div>
+                <div>{TrLang['sort']['gini'][lang]}</div>
                 {value === 'gini' && <SortArrow oder={order} />}
             </button>
         </div>

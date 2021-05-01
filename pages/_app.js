@@ -3,12 +3,12 @@ import '../styles/globals.css'
 
 
 export const LangContext = React.createContext({
-  language: 'en',
+  lang: 'en',
   switchLanguage:() =>{}
 });
 
 function MyApp({ Component, pageProps }) {
-  const [language,setlanguage] = useState("en")
+  const [lang,setlanguage] = useState("en")
 
   const switchLanguage = useCallback(function(){
     setlanguage((l)=>(l ==="en"? "ja":"en"))
@@ -16,17 +16,17 @@ function MyApp({ Component, pageProps }) {
 
 
   useEffect(() => {
-    document.documentElement.lang = language;
-  }, [language]);
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   const value = useMemo(
     function () {
       return {
-        language,
+        lang,
         switchLanguage,
       };
     },
-    [language, switchLanguage]
+    [lang, switchLanguage]
   );
 
   return(
