@@ -1,3 +1,4 @@
+import React from 'react'
 import RoundedSearchBar from '@material-ui/icons/SearchRounded'
 import styles from '../styles/SearchBar.module.css'
 export default function Searchbar({...rest}) {
