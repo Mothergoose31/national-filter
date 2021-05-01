@@ -1,35 +1,35 @@
 {
     "found_countries": {
-      "1": { "en": "Found", "ja": "を見つけました。" },
-      "2": { "en": "countries", "ja": "国" }
+        "1": { "en": "Found", "ja": "を見つけました。" },
+        "2": { "en": "countries", "ja": "国" }
     },
     "random_country": { "en": "Random country", "ja": "ランダムな国" },
     "switch_theme": { "en": "Change theme", "ja": "テーマ変更" },
     "switch_language": { "en": "Switch language", "ja": "言語切り替え" },
     "filter": {
-      "en": "Filter by name, Region or SubRegion",
-      "ja": "名前、地域、サブリージョンで検索"
+        "en": "",
+        "ja": ""
     },
     "sort": {
-      "name": { "en": "Name", "ja": "名前" },
-      "population": { "en": "Population", "ja": "人口" },
-      "area": { "en": "Area", "ja": "エリア" },
-      "gini": { "en": "Gini", "ja": "ジニ係数" }
+        "name": { "en": "Name", "ja": "名前" },
+        "population": { "en": "Population", "ja": "人口" },
+        "area": { "en": "Area", "ja": "エリア" },
+        "gini": { "en": "Gini index", "ja": "ジニ係数" }
     },
     "country": {
-      "details": { "en": "Details", "ja": "詳細" },
-      "capital": { "en": "Capital", "ja": "資本金" },
-      "subregion": { "en": "Subregion", "ja": "サブリージョン" },
-      "languages": { "en": "Languages", "ja": "言語" },
-      "currencies": { "en": "Currencies", "ja": "通貨" },
-      "native_name": { "en": "Native name", "ja": "ネイティブネーム" },
-      "gini": { "en": "Gini", "ja": "ジニ係数" },
-      "neighbouring_countries": {
+        "details": { "en": "Details", "ja": "詳細" },
+        "capital": { "en": "Capital", "ja": "資本金" },
+        "subregion": { "en": "Subregion", "ja": "サブリージョン" },
+        "languages": { "en": "Languages", "ja": "言語" },
+        "currencies": { "en": "Currencies", "ja": "通貨" },
+        "native_name": { "en": "Native name", "ja": "ネイティブネーム" },
+        "gini": { "en": "Gini index", "ja": "ジニ係数" },
+        "neighbouring_countries": {
         "en": "Neighbouring Countries",
         "ja": "隣接する国々"
-      },
-      "no_neighbors": { "en": "No neighbors", "ja": "ノー・ネイバーズ" },
-      "population": { "en": "Population", "ja": "人口" },
-      "area": { "en": "Area", "ja": "エリア" }
+        },
+        "no_neighbors": { "en": "No neighbors", "ja": "ノー・ネイバーズ" },
+        "population": { "en": "Population", "ja": "人口" },
+        "area": { "en": "Area", "ja": "エリア" }
     }
-  }
+}

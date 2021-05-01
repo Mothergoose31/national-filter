@@ -64,22 +64,22 @@ export default function TableOfNations({countries}) {
 <div className={styles.heading_flag}></div>
 <button className={styles.heading_name} onClick={() => setValueAndOder('name')}>
     <div>{TrLang['sort']['name'][lang]}</div>
-    {value === 'name' && <SortArrow direction={direction} />}
+    {value === 'name' && <SortArrow direction={order} />}
 </button>
 
 <button className={styles.heading_population} onClick={() => setValueAndOder('population')}>
     <div>{TrLang['sort']['population'][lang]}</div>
-    {value === 'population' && <SortArrow direction={direction} />}
+    {value === 'population' && <SortArrow direction={order} />}
 </button>
 
 <button className={styles.heading_area} onClick={() => setValueAndOder('area')}>
     <div>{TrLang['sort']['area'][lang]} (km<sup style={{ fontSize: "0.5rem" }}> 2</sup>)</div>
-    {value === 'area' && <SortArrow direction={direction} />}
+    {value === 'area' && <SortArrow direction={order} />}
 </button>
 
 <button className={styles.heading_gini} onClick={() => setValueAndOder('gini')}>
     <div>{TrLang['sort']['gini'][lang]}</div>
-    {value === 'gini' && <SortArrow direction={direction} />}
+    {value === 'gini' && <SortArrow direction={order} />}
 </button>
 </div>
 
