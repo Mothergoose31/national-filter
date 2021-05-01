@@ -52,11 +52,38 @@ export default function Layout({children,title = "National-Filter"}) {
             </Head>
             <header className={styles.header}>
                 <Link href='/'>
+                    <>
+                    <svg  x="0px" y="0px" width="278px" height="311.27px" viewBox="0 0 278 311.27" xmlns="http://www.w3.org/2000/svg" >
+                        
+	                    
+                    <defs>
+                    </defs>
+                        <g>
+                        	<rect x="151.23" y="26.17" width="43.08" height="235.55"/>
+                        	<path d="M194.04,26.45v235h-42.53v-235H194.04 M194.59,25.9h-43.63V262h43.63V25.9L194.59,25.9z"/>
+                        </g>
+                        <g>
+                        	<rect x="14.14" y="108.5" width="43.19" height="153.24"/>
+                        	<path d="M57.11,108.72v152.8H14.36v-152.8H57.11 M57.55,108.27H13.92v153.68h43.63V108.27L57.55,108.27z"/>
+                        </g>
+                        <g>
+                        	<rect x="77.63" class="st0" width="48.82" height="261.96"/>
+                        </g>
+                        <g>
+                        	<rect x="218.29" y="77.66" class="st0" width="43.63" height="184.39"/>
+                        </g>
+                        <g>
+                        	<rect x="0.32" y="275.59" width="277.37" height="35.37"/>
+                        	<path d="M277.37,275.91v34.73H0.63v-34.73H277.37 M278,275.27H0v36h278V275.27L278,275.27z"/>
+                        </g>
+                    </svg>
                     <h1 className={styles.title}>National-Filter</h1>
+                    </>
                 </Link>
+
                 <button className={styles.theme_switcher} onClick={switchTheme} title ={TrLang['switch_theme'][lang]} >
-                <Brightness6Rounded style={{ fontSize: '1.5rem' }}/>
-            </button>
+                    <Brightness6Rounded style={{ fontSize: '1.5rem' }}/>
+                </button>
 
             <button className={styles.language_switcher} onClick={switchLanguage} title ={TrLang['switch_language'][lang]}>
                 <LanguageRounded style={{ fontSize: '1.5rem' }}/>

@@ -4,7 +4,7 @@
         "2": { "en": "countries", "ja": "国" }
     },
     "random_country": { "en": "Random country", "ja": "ランダムな国" },
-    "switch_theme": { "en": "Change theme", "ja": "テーマ変更" },
+    "switch_theme": { "en": "Change theme", "ja": "テーマの変更" },
     "switch_language": { "en": "Switch language", "ja": "言語切り替え" },
     "filter": {
         "en": "",
@@ -18,17 +18,17 @@
     },
     "country": {
         "details": { "en": "Details", "ja": "詳細" },
-        "capital": { "en": "Capital", "ja": "資本金" },
-        "subregion": { "en": "Subregion", "ja": "サブリージョン" },
+        "capital": { "en": "Capital", "ja": "首都" },
+        "subregion": { "en": "Subregion", "ja": "小領域" },
         "languages": { "en": "Languages", "ja": "言語" },
         "currencies": { "en": "Currencies", "ja": "通貨" },
-        "native_name": { "en": "Native name", "ja": "ネイティブネーム" },
+        "native_name": { "en": "Native name", "ja": "国名" },
         "gini": { "en": "Gini index", "ja": "ジニ係数" },
         "neighbouring_countries": {
         "en": "Neighbouring Countries",
-        "ja": "隣接する国々"
+        "ja": "隣国"
         },
-        "no_neighbors": { "en": "No neighbors", "ja": "ノー・ネイバーズ" },
+        "no_neighbors": { "en": "No neighbors", "ja": "隣国なし" },
         "population": { "en": "Population", "ja": "人口" },
         "area": { "en": "Area", "ja": "エリア" }
     }

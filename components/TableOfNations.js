@@ -36,7 +36,7 @@ const SortArrow = ({ order }) => {
 }
 
 export default function TableOfNations({countries}) {
-    console.log(countries  )
+   
     const [order,setOrder] =useState()
     const [value,setValue] = useState()
     const { lang } = useContext(LangContext)
