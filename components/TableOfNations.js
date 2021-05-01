@@ -21,7 +21,6 @@ const orderBy = (countries, value, order) => {
 }
 
 
-
 const SortArrow = ({ order }) => {
     if (!order) return <></>
 
@@ -37,10 +36,11 @@ const SortArrow = ({ order }) => {
 }
 
 export default function TableOfNations({countries}) {
+    console.log(countries  )
     const [order,setOrder] =useState()
     const [value,setValue] = useState()
     const { lang } = useContext(LangContext)
-    const orderedNation = orderBy(countries, value, order)
+    const orderedNations = orderBy(countries, value, order)
 
     const reverseOrder = () => {
         if (!order) {
@@ -56,44 +56,49 @@ export default function TableOfNations({countries}) {
         reverseOrder();
         setValue(value)
     }
+
     return (
         <div>
-            
-        <div className={styles.heading}>
-            <div className={styles.heading_flag}></div>
-            <button className={styles.heading_name} onClick={() => setValueAndOder('name')}>
-                <div>{TrLang['sort']['name'][lang]}</div>
-                {value === 'name' && <SortArrow order={order} />}
-            </button>
+             <div className={styles.heading}>
 
-            <button className={styles.heading_population} onClick={() => setValueAndOder('population')}>
-                <div>{TrLang['sort']['population'][lang]}</div>
-                {value === 'population' && <SortArrow order={order} />}
-            </button>
+<div className={styles.heading_flag}></div>
+<button className={styles.heading_name} onClick={() => setValueAndOder('name')}>
+    <div>{TrLang['sort']['name'][lang]}</div>
+    {value === 'name' && <SortArrow direction={direction} />}
+</button>
 
-            <button className={styles.heading_area} onClick={() => setValueAndOder('area')}>
-                <div> (km<sup style={{ fontSize: "0.5rem" }}> 2</sup>)</div>
-                {value === 'area' && <SortArrow order={order} />}
-            </button>
+<button className={styles.heading_population} onClick={() => setValueAndOder('population')}>
+    <div>{TrLang['sort']['population'][lang]}</div>
+    {value === 'population' && <SortArrow direction={direction} />}
+</button>
 
-            <button className={styles.heading_gini} onClick={() => setValueAndOder('gini')}>
-                <div>{TrLang['sort']['gini'][lang]}</div>
-                {value === 'gini' && <SortArrow oder={order} />}
-            </button>
+<button className={styles.heading_area} onClick={() => setValueAndOder('area')}>
+    <div>{TrLang['sort']['area'][lang]} (km<sup style={{ fontSize: "0.5rem" }}> 2</sup>)</div>
+    {value === 'area' && <SortArrow direction={direction} />}
+</button>
+
+<button className={styles.heading_gini} onClick={() => setValueAndOder('gini')}>
+    <div>{TrLang['sort']['gini'][lang]}</div>
+    {value === 'gini' && <SortArrow direction={direction} />}
+</button>
+</div>
+
+{orderedNations.map((country) =>
+<Link href={`/country/${country.alpha3Code}`} key={country.name}>
+    <div className={styles.row}>
+        <div className={styles.flag}>
+            <Image src={country.flag} alt={country.name} width={60} height={40}/>
         </div>
-        {orderedNation.map((country)=>{
-            <Link href={`/country/${country.alpha3Code}`} key={country.name}>
-                    <div className={styles.row}>
-                        <div className={styles.flag}>
-                            <Image src={country.flag} alt={country.name} width={60} height={40}/>
-                    </div>
-                        <div className={styles.name}>{country.translations[lang] || country.name }</div>
-                        <div className={styles.population}>{formatNumber(country.population)}</div>
-                        <div className={styles.area}>{formatNumber(country.area) || 0}</div>
-                        <div className={styles.gini}>{country.gini || 0} %</div>
-                    </div>
-                </Link>
-            })}
-        </div>
+        <div className={styles.name}>{country.translations[lang] || country.name }</div>
+
+        <div className={styles.population}>{formatNumber(country.population)}</div>
+
+        <div className={styles.area}>{formatNumber(country.area) || 0}</div>
+
+        <div className={styles.gini}>{country.gini || 0} %</div>
+    </div>
+</Link>
+)}
+</div>
     )
 }

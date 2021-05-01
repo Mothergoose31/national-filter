@@ -1,16 +1,16 @@
 import React,{useState,useContext} from 'react';
+import {useRouter} from 'next/router'
 import Layout from '../components/Layout.js'
-
 import styles from '../styles/Home.module.css'
 import SearchBar from '../components/SearchBar.js'
 import TableOfNations from '../components/TableOfNations.js'
-
-
 import { ShuffleRounded } from '@material-ui/icons'
 import TrLang from '../public/translations/translation.json'
 import {LangContext} from './_app.js'
 
+
 export default function Home({countries}) {
+  const router = useRouter()
 
   const [keyword, setKeyword] = useState("")
   const { lang } = useContext(LangContext)
@@ -21,13 +21,14 @@ export default function Home({countries}) {
     country.subregion.toLowerCase().includes(keyword)
 )
 
+
   const onInputChange = (e) => {
     e.preventDefault()
     setKeyword(e.target.value.toLowerCase())
   }
   
   const randomCountry = () => {
-    const random = Math.floor(Math.random() * filteredCountry.length) + 1
+    const random = Math.floor(Math.random() * filteredNations.length) + 1
 
     return router.push(`/country/${countries[random].alpha3Code}`)
   }
